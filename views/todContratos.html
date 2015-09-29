@@ -1,0 +1,72 @@
+{% extends 'default_layout.html'%}
+
+{% block contenidos %}
+<ul>
+  <div class="pagination pagination-centered">
+  	<li><a href="?pag=1"><<</a></li>
+    <li><a href="?pag={{ pagina_anterior }}"><</a></li>
+	{% for key, pag in paginas %}
+    <li><a href="{{ pag }}" {{ key == pagina_actual ? 'style="font-weight: bold; text-decoration:underline;"' : "" }}>{{ key }}</a></li>
+	{% endfor %}
+    <li><a href="?pag={{ pagina_siguiente }}">></a></li>
+    <li><a href="?pag={{ ultima_pagina }}">>></a></li>
+  </div>
+</ul>
+
+<table class="table table-bordered table-condensed">
+	<thead>
+		<tr>
+			<th>Nº contrato</th>
+			<th>Tipo Contrato</th>
+			<th>Inicio Vigencia</th>
+			<th>Fin Vigencia</th>
+			<th>Modalidad</th>
+			<th>Documento Contratante</th>
+			<th>NombresYapellidos</th>
+			<th>Teléfono</th>
+
+			<th>Documento Beneficiario</th>
+			<th>NombresYapellidos</th>
+			<th>Teléfono</th>
+			<th>Celular</th>
+			<th>Email</th>
+			<th>Fecha de nacimiento</th>
+			<th>Dirección Residencia</th>
+			<th>Dirección Laboral</th>
+			<th>Editar</th>
+		</tr>
+	</thead>
+	<tbody id="lista_registro">
+		{% for registro in lista_paginada %}
+		<tr>
+			<td>{{ registro.num }}</td>
+			<td>{{ registro.tipo }}</td>
+			<td>{{ registro.inicioVig }}</td>
+			<td>{{ registro.finVig }}</td>
+			<td>{{ registro.modalidad }}</td>
+			<td>{{ registro.idContratante }}</td>
+			<td>{{ registro.p1n }} {{ registro.p1a }}</td>
+			<td>{{ registro.p1t }}</td>
+
+			<td>{{ registro.idBeneficiario }}</td>
+			<td>{{ registro.p2n }} {{ registro.p2a }}</td>
+			<td>{{ registro.p1t }}</td>
+			<td>{{ registro.p2c }}</td>
+			<td>{{ registro.p2e }}</td>
+			<td>{{ registro.p2nac }}</td>
+			<td>{{ registro.p2d }}</td>
+			<td>{{ registro.dirLaboral }}</td>
+			<td style="text-align:center;"> <button class=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button> </td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+	$(function(){
+		
+	});
+</script>
+{% endblock %}

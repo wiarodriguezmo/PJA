@@ -1,0 +1,36 @@
+{% extends 'default_layout.html'%}
+
+{% block contenidos %}
+      <form action="Benutzerregistrierung.php" method="POST" class="form-horizontal">
+	<div class="form-group">
+		<label style="margin-right: 20px" class="col-lg-2 control-label">Tipo de documento</label>
+		<label style="margin-right: 20px" class="radio-inline"><input type="radio" name="td" value="rc">Registro civil</label>
+		<label style="margin-right: 20px" class="radio-inline"><input type="radio" name="td" value="ti">Tarjeta de identidad</label>
+		<label style="margin-right: 20px" class="radio-inline"><input type="radio" name="td" value="cc">Cédula de ciudadanía</label>
+		<label style="margin-right: 20px" class="radio-inline"><input type="radio" name="td" value="pa">Pasaporte</label>
+	</div>
+
+        <input name="id" class="form-control" placeholder="Número de documento" required="yes" autofocus="" type="text">
+        <input name="name" class="form-control" placeholder="Nombres" required="" autofocus="" type="text">
+        <input name="famil" class="form-control" placeholder="Apellidos" required="" autofocus="" type="text">
+        <input name="telenummer" class="form-control" placeholder="Número de teléfono" type="text">
+        <input name="handynummer" class="form-control" placeholder="Número de celular" type="text">
+        <input name="email" type="email" class="form-control" placeholder="Dirección de correo electrónico" required autofocus>
+        <input name="adresse" class="form-control" placeholder="Dirección" required="" autofocus="" type="text">
+       
+	<div class="form-group">
+		<label style="margin-right: 20px" class="col-lg-2 control-label row">Fecha de nacimiento</label>
+	 	<input style="width:20%" name="alt" class="form-control row" placeholder="2015/12/31" required="" autofocus="" type="text">
+	</div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Inscribir</button>
+      </form>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+	$(function(){
+		
+	});
+</script>
+{% endblock %}

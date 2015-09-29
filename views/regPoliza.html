@@ -1,0 +1,51 @@
+{% extends 'default_layout.html'%}
+
+{% block contenidos %}
+     <br><form action="regPolicy.php" method="POST" class="form-horizontal">
+
+	<div class="form-group">
+		<label class="col-lg-2 control-label">Ramo o tipo de póliza:</label>
+		<select name="ramo" class="form-control">
+			<optgroup label="Principales">
+				<option>Vida</option>
+				<option>Soat</option>
+				<option>Autos</option>
+				<option>Hogar</option>
+				<option>Cumplimiento</option>
+				<option>Pyme</option>
+				<option>Viajes</option>
+			</optgroup>
+			<optgroup label="Secundarios">
+				<option>Trabajo</option>
+				<option>Otros...</option>
+			</optgroup>
+		</select>
+	</div>
+
+	  <div class="col-lg-6">
+	    <div class="input-group">
+	      <span class="input-group-btn">
+		<button id="b1" class="btn btn-default" type="button">Buscar persona</button>
+	      </span>
+	      <input name="persona" type="text" class="form-control" placeholder="Ingrese el documento del contratante">
+	    </div><!-- /input-group -->
+	  </div><!-- /.col-lg-6 -->
+
+        <input name="id" class="form-control" placeholder="Número de la poliza" required="yes" autofocus="" type="text">
+        <input name="ini" class="form-control" placeholder="Inicio de la vigencia, 2000/12/31" required="yes" autofocus="" type="text">
+        <input name="fin" class="form-control" placeholder="Vencimiento de la vigencia, 2000/12/31" required="yes" autofocus="" type="text">
+        <input name="valor" class="form-control" placeholder="Poliza por valor.."  required="yes" type="text">
+        <input name="valorp" class="form-control" placeholder="Valor de la poliza"  required="yes" type="text">
+        <input name="comp" class="form-control" placeholder="Compañía" required="" autofocus="" type="text">
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>
+      </form>
+{% endblock %}	
+
+{% block javascripts %}
+<script type="text/javascript">
+	$(function(){
+		
+	});
+</script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'default_layout.html'%}
+
+{% block contenidos %}
+<ul>
+  <div class="pagination pagination-centered">
+  	<li><a href="?pag=1"><<</a></li>
+    <li><a href="?pag={{ pagina_anterior }}"><</a></li>
+	{% for key, pag in paginas %}
+    <li><a href="{{ pag }}" {{ key == pagina_actual ? 'style="font-weight: bold; text-decoration:underline;"' : "" }}>{{ key }}</a></li>
+	{% endfor %}
+    <li><a href="?pag={{ pagina_siguiente }}">></a></li>
+    <li><a href="?pag={{ ultima_pagina }}">>></a></li>
+  </div>
+</ul>
+
+<table class="table table-bordered table-condensed">
+	<thead>
+		<tr>
+			<th>Persona</th>
+			<th>Número de Póliza</th>
+			<th>Inicio Vig</th>
+			<th>Fin Vig</th>
+			<th>Ramo</th>
+			<th>Valor</th>
+			<th>Valor Póliza</th>
+			<th>Compañía</th>
+		</tr>
+	</thead>
+	<tbody id="lista_registro">
+		{% for registro in lista_paginada %}
+		<tr>
+			<td>{{ registro.idPersona }}</td>
+			<td>{{ registro.id }}</td>
+			<td>{{ registro.vigencia }}</td>
+			<td>{{ registro.vencimiento }}</td>
+			<td>{{ registro.ramo }}</td>
+			<td>{{ registro.valor }}</td>
+			<td>{{ registro.valorPoliza }}</td>
+			<td>{{ registro.compania }}</td>
+			<td style="text-align:center;"> <button class=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button> </td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+	$(function(){
+		
+	});
+</script>
+{% endblock %}

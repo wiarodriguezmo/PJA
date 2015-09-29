@@ -1,0 +1,56 @@
+{% extends 'default_layout.html'%}
+
+{% block contenidos %}
+     <br><form action="regVertrag.php" method="POST" class="form-horizontal">
+	<div class="form-group">
+		<label style="margin-right: 40px" class="col-lg-2 control-label">Tipo de contrato:</label>
+		<label style="margin-right: 40px" class="radio-inline"><input type="radio" name="tipo" value="Asociativo">Asociativo</label>
+		<label style="margin-right: 40px" class="radio-inline"><input type="radio" name="tipo" value="Familiar">Familiar</label>
+		<label class="radio-inline"><input type="radio" name="tipo" value="Colectivo">Colectivo</label>
+	</div>
+	  <div class="col-lg-6">
+	    <div class="input-group">
+	      <span class="input-group-btn">
+		<button id="b1" class="btn btn-default" type="button">Buscar persona</button>
+	      </span>
+	      <input name="idContratante" type="text" class="form-control" placeholder="Ingrese el documento del contratante">
+	    </div><!-- /input-group -->
+	  </div><!-- /.col-lg-6 -->
+	  <div class="col-lg-6">
+	    <div class="input-group">
+	      <span class="input-group-btn">
+		<button id="b1" class="btn btn-default" type="button">Buscar persona</button>
+	      </span>
+	      <input name="idBeneficiario" type="text" class="form-control" placeholder="Ingrese el documento del beneficiario">
+	    </div><!-- /input-group -->
+	  </div><!-- /.col-lg-6 -->
+        <input name="num" class="form-control" placeholder="Número de contrato" required="yes" autofocus="" type="text">
+        <input name="inicioVig" class="form-control" placeholder="Inicio Vigencia en la forma año/mes/día. eg: 2015/12/31" required="" autofocus="" type="text">
+        <input name="finVig" class="form-control" placeholder="Fin Vigencia en la forma año/mes/día. eg: 2015/12/31" required="" autofocus="" type="text">
+	<div class="form-group">
+		<label class="col-lg-2 control-label">Modalidad:</label>
+		<select name="modalidad" class="form-control">
+			<optgroup label="Principal">
+				<option>Mensual</option>
+				<option>Bimestral</option>
+				<option>Trimestral</option>
+				<option>Semestral</option>
+				<option>Anual</option>
+			</optgroup>
+			<optgroup label="Secundario">
+			</optgroup>
+		</select>
+	</div>
+        <input name="dirLaboral" class="form-control" placeholder="Dirección Laboral" required="" autofocus="" type="text">
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Inscribir</button>
+      </form>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+	$(function(){
+		
+	});
+</script>
+{% endblock %}
